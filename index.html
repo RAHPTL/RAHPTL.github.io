@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Javascript | Task</title>
+		<meta charset="UTF-8">
+		<link rel="icon" href="favicon.ico">
+		<style type="text/css">
+			*{border: none;font: 16px/140% sans-serif,arial;margin: 0;outline: none;padding: 0;}
+			.buttons{background-color: #7986cb;margin-bottom: 25px;padding: 72px 0;text-align: center;}
+			.button{background-color: #7986cb;border: 2px solid #ffffff;border-radius:5px;color:#ffffff;cursor: pointer;display:inline-block;margin-right: 25px;padding: 15px 30px;text-transform: capitalize;transition: all 0.2s ease-in-out;}
+			.button:hover{background-color: #37474f;border-color: #37474f;}
+			.target{display: block;margin: 0 auto 25px auto;}
+			.thanks{background-color: #7986cb;color:#ffffff;padding: 5px;text-align: right;}
+		</style>
+	</head>
+	<body>
+		
+		<div class="buttons">
+			<button class="button" id="black">black</button>
+			<button class="button" id="gold">gold</button>
+			<button class="button" id="blue">blue</button>
+			<button class="button" id="rose-gold">rose gold</button>
+		</div>
+		<img src="black.jpeg" class="target">
+		<div class="thanks">Thanks Dhawal,Karina,Vicky :)</div>
+
+		<script>
+			(function(){
+				const btnNodeList = document.querySelectorAll('.button');
+				const targetEl = document.querySelector('.target');
+
+				Array.from(btnNodeList).forEach(el =>{
+					el.addEventListener('click', e =>{
+						const image = e.target.id + '.jpeg';
+						targetEl.setAttribute('src',image);
+					});
+				});
+			})();
+		</script>
+
+	</body>
+</html>
